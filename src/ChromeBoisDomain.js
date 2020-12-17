@@ -16,7 +16,12 @@ export default class ChromeBoisDomain extends Component {
 
 
    scaleImage = (event) => {
-     resize(event)
+     if(event.key === 'a'){
+       resize('+')
+     }
+     else if(event.key === 's'){
+       resize('-')
+     }
    }
    
   
@@ -26,7 +31,7 @@ export default class ChromeBoisDomain extends Component {
       <canvas 
         onMouseMove={this.handleMouseMove} 
         onClick={this.handleCycle}
-        onKeyDown={this.scaleImage}
+        onKeyPress={this.scaleImage}
 
         width='900'
         height='600'
